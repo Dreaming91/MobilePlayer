@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:orientation="vertical">
+
+    <!--视频播放控件-->
+    <com.itheima.player.ui.view.VideoView
+        android:id="@+id/video_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"/>
+
+    <!--顶部控制面板-->
+    <LinearLayout
+        android:id="@+id/ll_top_ctrl_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_top_statusbar"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp">
+
+            <TextView
+                android:id="@+id/tv_video_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="视频名称"
+                android:maxLines="1"
+                android:textColor="@color/white"
+                android:textSize="14sp"/>
+            <TextView
+                android:id="@+id/tv_system_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="00:00:00"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/white"
+                android:textSize="14sp"/>
+
+            <ImageView
+                android:layout_toLeftOf="@id/tv_system_time"
+                android:id="@+id/iv_battery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_battery_60"/>
+            <TextView
+                android:background="@null"
+                android:text="100%"
+                android:layout_marginTop="3dp"
+                android:layout_marginRight="2dp"
+                android:textColor="@color/white"
+                android:id="@+id/tv_battery"
+                android:textSize="6sp"
+                android:gravity="center"
+                android:layout_toLeftOf="@id/tv_system_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_top_seekbar"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_toggle_mute"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_voice"/>
+
+            <SeekBar
+                android:id="@+id/sb_volume"
+                style="@android:style/Widget.SeekBar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:max="0"
+                android:progress="0"
+                android:maxHeight="3dp"
+                android:minHeight="3dp"
+                android:background="@null"
+                android:thumb="@drawable/seekbar_video_thumb"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <!--底部控制面板-->
+    <LinearLayout
+        android:id="@+id/ll_bottom_ctrl_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_bottom_seekbar"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+            <TextView
+                android:id="@+id/tv_current_position"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00:00"
+                android:textColor="@color/white"
+                android:textSize="14sp"/>
+
+            <SeekBar
+                android:id="@+id/sb_current_position"
+                style="@android:style/Widget.SeekBar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:max="0"
+                android:maxHeight="3dp"
+                android:minHeight="3dp"
+                android:progress="0"
+                android:thumb="@drawable/seekbar_video_thumb"/>
+
+            <TextView
+                android:id="@+id/tv_duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="00:00"
+                android:textColor="@color/white"
+                android:textSize="14sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_bottom_control"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <include layout="@layout/place_holder"/>
+
+            <Button
+                android:id="@id/btn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_exit"/>
+
+            <include layout="@layout/place_holder"/>
+
+            <Button
+                android:id="@+id/btn_prev_video"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_prev"/>
+
+            <include layout="@layout/place_holder"/>
+
+            <Button
+                android:id="@+id/btn_toggle_play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_pause"/>
+
+            <include layout="@layout/place_holder"/>
+
+            <Button
+                android:id="@+id/btn_next_video"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_next"/>
+
+            <include layout="@layout/place_holder"/>
+
+            <Button
+                android:id="@+id/btn_toggle_fullscreen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_full_screen"/>
+
+            <include layout="@layout/place_holder"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--视频加载提示-->
+    <LinearLayout
+        android:id="@+id/ll_loading"
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:gravity="center_vertical"
+        android:layout_centerInParent="true"
+        android:layout_height="wrap_content">
+
+        <ProgressBar
+            android:layout_width="30dp"
+            android:layout_height="30dp"/>
+
+        <TextView
+            android:text="正在加载数据..."
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
